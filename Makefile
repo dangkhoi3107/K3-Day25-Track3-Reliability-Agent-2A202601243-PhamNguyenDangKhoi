@@ -1,7 +1,7 @@
 .PHONY: test lint typecheck run-chaos report clean docker-up docker-down
 
 test:
-	pytest -q
+	pytest -q -p no:cacheprovider
 
 lint:
 	ruff check src tests scripts

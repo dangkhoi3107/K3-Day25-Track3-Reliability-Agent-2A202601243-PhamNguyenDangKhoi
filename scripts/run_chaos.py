@@ -14,7 +14,10 @@ def main() -> None:
     config = load_config(args.config)
     metrics = run_simulation(config, load_queries())
     metrics.write_json(args.out)
+    csv_path = str(args.out).rsplit(".", maxsplit=1)[0] + ".csv"
+    metrics.write_csv(csv_path)
     print(f"wrote {args.out}")
+    print(f"wrote {csv_path}")
 
 
 if __name__ == "__main__":

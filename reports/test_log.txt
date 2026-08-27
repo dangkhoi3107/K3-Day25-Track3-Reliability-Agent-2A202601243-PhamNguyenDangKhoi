@@ -1,0 +1,3 @@
+pytest -q -p no:cacheprovider
+...................................XXXXXXX                               [100%]
+35 passed, 7 xpassed in 20.92s

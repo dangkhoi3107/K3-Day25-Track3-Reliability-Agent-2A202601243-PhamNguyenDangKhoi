@@ -36,6 +36,9 @@ class ScenarioConfig(BaseModel):
     name: str
     description: str = ""
     provider_overrides: dict[str, float] = Field(default_factory=dict)
+    recovery_after_requests: int | None = Field(default=None, gt=0)
+    recovery_provider: str | None = None
+    recovery_fail_rate: float = Field(default=0.0, ge=0.0, le=1.0)
 
 
 class LabConfig(BaseModel):
